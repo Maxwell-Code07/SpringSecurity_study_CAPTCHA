@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.powernode.springsecurity11.dao.SysMenuDao">
+
+    <select id="queryPermissionByUserId" resultType="string">
+        select m.code
+        from sys_menu m
+                 join sys_role_menu rm on rm.mid = m.id
+                 join sys_role_user ru on ru.rid = rm.rid
+        where ru.uid = #{userId}
+    </select>
+
+</mapper>
