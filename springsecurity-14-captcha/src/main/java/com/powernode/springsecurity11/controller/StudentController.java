@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/student")
 public class StudentController {
 
+    // 物理视图 = 默认前缀 + 逻辑视图 + 默认后缀
+
     @GetMapping("/query")
     @PreAuthorize("hasAuthority('student:query')")
     public String queryInfo(){

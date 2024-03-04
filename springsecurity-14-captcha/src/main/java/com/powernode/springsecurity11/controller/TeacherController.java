@@ -17,7 +17,7 @@ public class TeacherController {
     @GetMapping("/query")
     @PreAuthorize("hasAuthority('teacher:query')") // 预授权
     public String queryInfo(){
-        return "I am a teacher!";
+        return "teacher/query";
     }
 
 }
